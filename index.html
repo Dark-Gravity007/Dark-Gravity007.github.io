@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #fff;
+            margin: 0;
+            padding: 8px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 16px;
+            margin: 8px 0 12px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+        .btn {
+            background: #0066cc;
+            color: white;
+            padding: 16px 4px;
+            text-decoration: none;
+            font-size: 24px;
+            border-radius: 8px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn:active {
+            background: #0088ff;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #222;
+            color: #0ff;
+            padding: 8px;
+            font-size: 15px;
+            min-height: 22px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📱 My Dashboard</h1>
+    
+    <div class="grid">
+        <a href="https://www.google.com/xhtml" class="btn" onclick="setFooter('Google Search')">🔍</a>
+        <a href="https://web.telegram.org/a/" class="btn" onclick="setFooter('Telegram')">✉️</a>
+        <a href="https://en.m.wikipedia.org" class="btn" onclick="setFooter('Wikipedia')">📖</a>
+        
+        
+    </div>
+
+    <footer id="footer">Tap any icon above</footer>
+
+    <script>
+        function setFooter(name) {
+            document.getElementById('footer').innerText = name;
+        }
+    </script>
+</body>
+</html>
