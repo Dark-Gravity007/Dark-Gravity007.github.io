@@ -3,54 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Dashboard</title>
+    <title>Dashboard</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background: #111;
             color: #fff;
             margin: 0;
-            padding: 10px;
+            padding: 8px;
             text-align: center;
         }
         h1 {
-            font-size: 18px;
-            margin: 10px 0;
+            font-size: 16px;
+            margin: 8px 0 12px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            max-width: 320px;
+            margin: 0 auto;
         }
         .btn {
-            display: block;
             background: #0066cc;
             color: white;
-            padding: 14px;
-            margin: 12px auto;
+            padding: 16px 4px;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 24px;
             border-radius: 8px;
-            max-width: 280px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .btn:hover, .btn:active {
+        .btn:active {
             background: #0088ff;
         }
-        .small {
-            font-size: 14px;
-            background: #333;
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #222;
+            color: #0ff;
+            padding: 8px;
+            font-size: 15px;
+            min-height: 22px;
         }
     </style>
 </head>
 <body>
     <h1>📱 My Dashboard</h1>
     
-    <a href="https://www.google.com/xhtml" class="btn">🔍 Google Search (Lite)</a>
-    <a href="https://duckduckgo.com/lite/" class="btn">🦆 DuckDuckGo Lite</a>
-    <a href="https://web.telegram.org/k/" class="btn">✉️ Telegram Web (K)</a>
-    <a href="https://web.telegram.org/a/" class="btn small">Telegram Web (A)</a>
-    <a href="https://m.cricbuzz.com" class="btn">🏏 Cricbuzz (Cricket)</a>
-    <a href="https://en.m.wikipedia.org" class="btn">📖 Wikipedia</a>
-    <a href="https://m.facebook.com" class="btn">📘 Facebook Mobile</a>
-    
-    <p style="margin-top:20px; font-size:13px; color:#aaa;">
-        Use arrow keys / numbers to navigate.<br>
-        Add more links as needed.
-    </p>
+    <div class="grid">
+        <a href="https://www.google.com/xhtml" class="btn" onclick="setFooter('Google Search')">🔍</a>
+        <a href="https://web.telegram.org/a/" class="btn" onclick="setFooter('Telegram')">✉️</a>
+        <a href="https://en.m.wikipedia.org" class="btn" onclick="setFooter('Wikipedia')">📖</a>
+        
+    </div>
+
+    <footer id="footer">Tap any icon above</footer>
+
+    <script>
+        function setFooter(name) {
+            document.getElementById('footer').innerText = name;
+        }
+    </script>
 </body>
 </html>
